@@ -13,7 +13,7 @@ export default defineConfig({
 
 			adapter: adapter(),
 
-			// '/raj_two' when built by the Pages workflow, '' for local dev and Capacitor builds
+			// '' everywhere: Pages serves from the root of the custom domain (static/CNAME); override with BASE_PATH only for a sub-path host
 			paths: { base: (process.env.BASE_PATH ?? '') as '' | `/${string}` }
 		})
 	]

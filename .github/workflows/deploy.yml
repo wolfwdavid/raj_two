@@ -28,8 +28,7 @@ jobs:
           enablement: true
       - run: npm ci
       - run: npm run build
-        env:
-          BASE_PATH: /${{ github.event.repository.name }}
+        # BASE_PATH is empty: the site is served from the root of the custom domain (see static/CNAME)
       - uses: actions/upload-pages-artifact@v3
         with:
           path: build
